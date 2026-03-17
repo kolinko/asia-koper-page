@@ -12,20 +12,26 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --cream: #faf8f4;
-      --warm-white: #fefdfb;
-      --sand: #e8e0d4;
-      --clay: #c4b5a2;
-      --terracotta: #c17f59;
-      --terracotta-dark: #a86d4a;
-      --deep-brown: #3d2e1e;
-      --soft-olive: #7a8a6e;
-      --olive-dark: #5e6e52;
-      --text: #2c2420;
-      --text-light: #6b5e54;
-      --accent: #c17f59;
-      --accent-hover: #a86d4a;
-      --section-dark: #2a2018;
+      --cream: #faf7f2;
+      --warm-white: #fefcf8;
+      --sand: #e8e2d8;
+      --sand-light: #f0ece4;
+      --plum: #4a1942;
+      --plum-medium: #5e2858;
+      --plum-light: #7a3e72;
+      --plum-pale: rgba(74, 25, 66, 0.06);
+      --teal: #0a9396;
+      --teal-dark: #087f82;
+      --teal-light: #38b2ac;
+      --teal-pale: rgba(10, 147, 150, 0.08);
+      --magenta: #c60e8c;
+      --magenta-light: rgba(198, 14, 140, 0.08);
+      --text: #2c2636;
+      --text-light: #5e5670;
+      --text-muted: #8a8098;
+      --accent: var(--teal);
+      --accent-hover: var(--teal-dark);
+      --section-dark: #2a1826;
     }
 
     html { scroll-behavior: smooth; }
@@ -46,15 +52,15 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(250, 248, 244, 0.85);
+      background: rgba(250, 247, 242, 0.88);
       backdrop-filter: blur(24px) saturate(180%);
       -webkit-backdrop-filter: blur(24px) saturate(180%);
-      border-bottom: 1px solid rgba(196, 181, 162, 0);
+      border-bottom: 1px solid rgba(74, 25, 66, 0);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     nav.scrolled {
-      box-shadow: 0 1px 30px rgba(0,0,0,0.06);
-      border-bottom-color: rgba(196, 181, 162, 0.15);
+      box-shadow: 0 1px 30px rgba(74, 25, 66, 0.06);
+      border-bottom-color: rgba(74, 25, 66, 0.08);
     }
     .nav-inner {
       max-width: 1200px;
@@ -68,7 +74,7 @@
     .nav-logo {
       font-family: 'DM Serif Display', serif;
       font-size: 1.3rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       text-decoration: none;
       letter-spacing: -0.02em;
     }
@@ -88,12 +94,12 @@
       position: absolute;
       bottom: -4px; left: 0; right: 0;
       height: 1.5px;
-      background: var(--accent);
+      background: var(--teal);
       transform: scaleX(0);
       transform-origin: right;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover { color: var(--teal); }
     .nav-links a:hover::after { transform: scaleX(1); transform-origin: left; }
     .hamburger {
       display: none;
@@ -107,7 +113,7 @@
     }
     .hamburger span {
       width: 24px; height: 2px;
-      background: var(--deep-brown);
+      background: var(--plum);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       transform-origin: center;
     }
@@ -134,7 +140,7 @@
       font-weight: 500;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--teal);
       margin-bottom: 1.8rem;
       display: flex;
       align-items: center;
@@ -143,20 +149,20 @@
     .hero-tag::before {
       content: '';
       width: 28px; height: 1.5px;
-      background: var(--accent);
+      background: var(--teal);
     }
     .hero-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2.4rem, 4.5vw, 3.8rem);
       line-height: 1.12;
-      color: var(--deep-brown);
+      color: var(--plum);
       margin-bottom: 1.6rem;
       letter-spacing: -0.02em;
     }
     .hero-title em {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      color: var(--accent);
+      color: var(--teal);
     }
     .hero-subtitle {
       font-size: 1.05rem;
@@ -183,22 +189,22 @@
       font-family: inherit;
     }
     .btn-primary {
-      background: var(--accent);
+      background: var(--teal);
       color: white;
     }
     .btn-primary:hover {
-      background: var(--accent-hover);
+      background: var(--teal-dark);
       transform: translateY(-2px);
-      box-shadow: 0 12px 35px rgba(193, 127, 89, 0.3);
+      box-shadow: 0 12px 35px rgba(10, 147, 150, 0.25);
     }
     .btn-outline {
       background: transparent;
       color: var(--text);
-      border: 1.5px solid var(--clay);
+      border: 1.5px solid var(--sand);
     }
     .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--plum);
+      color: var(--plum);
       transform: translateY(-2px);
     }
     .hero-image {
@@ -236,7 +242,7 @@
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
-      color: var(--clay);
+      color: var(--sand);
       font-size: 0.7rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -244,7 +250,7 @@
     }
     .hero-scroll-hint .scroll-line {
       width: 1px; height: 36px;
-      background: linear-gradient(to bottom, var(--clay), transparent);
+      background: linear-gradient(to bottom, var(--sand), transparent);
     }
     @keyframes float {
       0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -259,7 +265,7 @@
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--teal);
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
@@ -268,13 +274,13 @@
     .section-tag::before {
       content: '';
       width: 20px; height: 1.5px;
-      background: var(--accent);
+      background: var(--teal);
     }
     .section-title {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(1.8rem, 3.5vw, 2.6rem);
       line-height: 1.2;
-      color: var(--deep-brown);
+      color: var(--plum);
       margin-bottom: 1rem;
       letter-spacing: -0.01em;
     }
@@ -309,7 +315,7 @@
     .about-photo {
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.1);
+      box-shadow: 0 24px 64px rgba(74, 25, 66, 0.1);
       position: relative;
       z-index: 1;
     }
@@ -323,7 +329,7 @@
       font-family: 'DM Serif Display', serif;
       font-size: 1.7rem;
       margin-bottom: 1.5rem;
-      color: var(--deep-brown);
+      color: var(--plum);
     }
     .about-text p {
       margin-bottom: 1.1rem;
@@ -335,8 +341,8 @@
       font-family: 'Playfair Display', serif;
       font-style: italic;
       font-size: 1.15rem;
-      color: var(--accent);
-      border-left: 3px solid var(--sand);
+      color: var(--plum-light);
+      border-left: 3px solid var(--teal);
       padding-left: 1.5rem;
       margin: 2rem 0;
       line-height: 1.7;
@@ -352,14 +358,15 @@
       font-size: 0.76rem;
       font-weight: 500;
       border-radius: 50px;
-      background: var(--cream);
-      color: var(--text-light);
-      border: 1px solid var(--sand);
+      background: var(--plum-pale);
+      color: var(--plum);
+      border: 1px solid rgba(74, 25, 66, 0.1);
       transition: all 0.25s;
     }
     .credential:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--teal);
+      color: var(--teal);
+      background: var(--teal-pale);
     }
 
     /* ==================== EXPERIENCE TIMELINE ==================== */
@@ -373,7 +380,7 @@
       position: absolute;
       left: 0; top: 0; bottom: 0;
       width: 2px;
-      background: linear-gradient(to bottom, var(--accent), var(--sand));
+      background: linear-gradient(to bottom, var(--teal), var(--plum-light), var(--sand));
     }
     .timeline-item {
       position: relative;
@@ -388,19 +395,19 @@
       width: 12px; height: 12px;
       border-radius: 50%;
       background: var(--cream);
-      border: 3px solid var(--accent);
+      border: 3px solid var(--teal);
       margin-left: -5px;
       z-index: 1;
       transition: all 0.3s;
     }
     .timeline-item:hover::before {
-      background: var(--accent);
-      box-shadow: 0 0 0 5px rgba(193, 127, 89, 0.15);
+      background: var(--teal);
+      box-shadow: 0 0 0 5px rgba(10, 147, 150, 0.12);
     }
     .timeline-period {
       font-size: 0.73rem;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--teal);
       letter-spacing: 0.1em;
       text-transform: uppercase;
       margin-bottom: 0.35rem;
@@ -408,12 +415,12 @@
     .timeline-role {
       font-family: 'DM Serif Display', serif;
       font-size: 1.25rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       margin-bottom: 0.25rem;
     }
     .timeline-org {
       font-size: 0.88rem;
-      color: var(--soft-olive);
+      color: var(--plum-light);
       font-weight: 500;
       margin-bottom: 0.6rem;
     }
@@ -435,7 +442,7 @@
       background: white;
       border-radius: 20px;
       padding: 2.5rem 2rem 2rem;
-      border: 1px solid rgba(232, 224, 212, 0.6);
+      border: 1px solid rgba(74, 25, 66, 0.06);
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
@@ -445,42 +452,34 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 4px;
-      background: linear-gradient(to right, var(--accent), var(--soft-olive));
+      background: linear-gradient(to right, var(--teal), var(--plum-light));
       opacity: 0;
       transition: opacity 0.3s;
     }
     .initiative-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 24px 64px rgba(0,0,0,0.08);
+      box-shadow: 0 24px 64px rgba(74, 25, 66, 0.08);
     }
     .initiative-card:hover::before { opacity: 1; }
     .initiative-icon {
-      width: 56px; height: 56px;
+      width: 64px; height: 64px;
       border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
+      overflow: hidden;
       margin-bottom: 1.5rem;
     }
-    .initiative-icon.m4s {
-      background: linear-gradient(135deg, rgba(193,127,89,0.15), rgba(193,127,89,0.05));
-    }
-    .initiative-icon.wit {
-      background: linear-gradient(135deg, rgba(122,138,110,0.15), rgba(122,138,110,0.05));
-    }
-    .initiative-icon.sns {
-      background: linear-gradient(135deg, rgba(160,120,180,0.15), rgba(160,120,180,0.05));
+    .initiative-icon img {
+      width: 100%; height: 100%;
+      object-fit: cover;
     }
     .initiative-card h3 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.25rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       margin-bottom: 0.6rem;
     }
     .initiative-card .initiative-subtitle {
       font-size: 0.78rem;
-      color: var(--soft-olive);
+      color: var(--teal);
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -504,12 +503,12 @@
     .initiative-stat .stat-number {
       font-family: 'DM Serif Display', serif;
       font-size: 1.6rem;
-      color: var(--accent);
+      color: var(--teal);
       line-height: 1;
     }
     .initiative-stat .stat-label {
       font-size: 0.7rem;
-      color: var(--clay);
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin-top: 0.2rem;
@@ -517,7 +516,7 @@
 
     /* ==================== IMPACT BANNER ==================== */
     .impact-banner {
-      background: var(--deep-brown);
+      background: var(--plum);
       padding: 4rem 2rem;
       overflow: hidden;
     }
@@ -534,13 +533,13 @@
     .impact-number {
       font-family: 'DM Serif Display', serif;
       font-size: clamp(2rem, 4vw, 3rem);
-      color: var(--terracotta);
+      color: var(--teal-light);
       line-height: 1;
       margin-bottom: 0.4rem;
     }
     .impact-label {
       font-size: 0.78rem;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.4);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       line-height: 1.4;
@@ -557,7 +556,7 @@
       background: white;
       border-radius: 16px;
       padding: 1.8rem;
-      border: 1px solid rgba(232, 224, 212, 0.5);
+      border: 1px solid rgba(74, 25, 66, 0.05);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
       color: inherit;
@@ -567,8 +566,8 @@
     }
     .media-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.07);
-      border-color: var(--accent);
+      box-shadow: 0 16px 48px rgba(74, 25, 66, 0.07);
+      border-color: var(--teal);
     }
     .media-card-header {
       display: flex;
@@ -585,12 +584,12 @@
       font-size: 1.1rem;
       flex-shrink: 0;
     }
+    .media-card-icon.plum { background: linear-gradient(135deg, rgba(74,25,66,0.1), rgba(74,25,66,0.04)); }
+    .media-card-icon.teal { background: linear-gradient(135deg, rgba(10,147,150,0.1), rgba(10,147,150,0.04)); }
+    .media-card-icon.magenta { background: linear-gradient(135deg, rgba(198,14,140,0.1), rgba(198,14,140,0.04)); }
     .media-card-icon.blue { background: linear-gradient(135deg, #e8f0fb, #d4e3f5); }
-    .media-card-icon.green { background: linear-gradient(135deg, #e4ede0, #d2dfc9); }
-    .media-card-icon.purple { background: linear-gradient(135deg, #ede4f0, #dcd0e3); }
     .media-card-icon.gold { background: linear-gradient(135deg, #f5edd8, #ede0c4); }
     .media-card-icon.red { background: linear-gradient(135deg, #f5e0e0, #edd4d4); }
-    .media-card-icon.teal { background: linear-gradient(135deg, #dff0ec, #cde5df); }
     .media-card-source {
       font-size: 0.72rem;
       font-weight: 600;
@@ -601,7 +600,7 @@
     .media-card h4 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.05rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       line-height: 1.3;
     }
     .media-card p {
@@ -611,7 +610,7 @@
     }
     .media-card .media-link-text {
       font-size: 0.78rem;
-      color: var(--accent);
+      color: var(--teal);
       font-weight: 500;
       display: flex;
       align-items: center;
@@ -632,7 +631,7 @@
       background: white;
       border-radius: 18px;
       padding: 2.5rem 2rem;
-      border: 1px solid rgba(232, 224, 212, 0.5);
+      border: 1px solid rgba(74, 25, 66, 0.05);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
@@ -642,30 +641,30 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 3px;
-      background: var(--accent);
+      background: linear-gradient(to right, var(--teal), var(--plum-light));
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .service-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 56px rgba(0,0,0,0.07);
+      box-shadow: 0 20px 56px rgba(74, 25, 66, 0.07);
     }
     .service-card:hover::after { transform: scaleX(1); }
     .service-icon {
-      width: 50px; height: 50px;
+      width: 56px; height: 56px;
       border-radius: 13px;
-      background: linear-gradient(135deg, rgba(193,127,89,0.12), rgba(193,127,89,0.04));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
+      overflow: hidden;
       margin-bottom: 1.5rem;
+    }
+    .service-icon img {
+      width: 100%; height: 100%;
+      object-fit: cover;
     }
     .service-card h3 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.2rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       margin-bottom: 0.8rem;
     }
     .service-card p {
@@ -677,11 +676,11 @@
     .service-price {
       font-size: 0.88rem;
       font-weight: 600;
-      color: var(--accent);
+      color: var(--teal);
     }
     .service-price span {
       font-size: 0.75rem;
-      color: var(--clay);
+      color: var(--text-muted);
       font-weight: 300;
     }
     .service-badge {
@@ -691,8 +690,8 @@
       font-weight: 700;
       padding: 0.3rem 0.8rem;
       border-radius: 50px;
-      background: rgba(122, 138, 110, 0.12);
-      color: var(--soft-olive);
+      background: var(--teal-pale);
+      color: var(--teal);
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
@@ -708,35 +707,32 @@
       background: white;
       border-radius: 16px;
       overflow: hidden;
-      border: 1px solid rgba(232, 224, 212, 0.45);
+      border: 1px solid rgba(74, 25, 66, 0.05);
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
     }
     .product-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.07);
+      box-shadow: 0 16px 48px rgba(74, 25, 66, 0.07);
     }
     .product-visual {
-      height: 130px;
+      height: 150px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2.5rem;
       position: relative;
+      overflow: hidden;
+      background: var(--sand-light);
     }
-    .product-visual.v1 { background: linear-gradient(135deg, #f5e6d8, #edd8c7); }
-    .product-visual.v2 { background: linear-gradient(135deg, #e8ded4, #d8cfc4); }
-    .product-visual.v3 { background: linear-gradient(135deg, #dfe8d8, #cfdbc5); }
-    .product-visual.v4 { background: linear-gradient(135deg, #dde4ec, #cdd5df); }
-    .product-visual.v5 { background: linear-gradient(135deg, #ece4dd, #ddd4cc); }
-    .product-visual.v6 { background: linear-gradient(135deg, #e3e8dd, #d4daca); }
-    .product-visual.v7 { background: linear-gradient(135deg, #e8dde4, #d8cdd5); }
-    .product-visual.v8 { background: linear-gradient(135deg, #dde8e4, #cddbd8); }
+    .product-visual img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
     .product-info { padding: 1.2rem; }
     .product-info h4 {
       font-family: 'DM Serif Display', serif;
       font-size: 0.98rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       margin-bottom: 0.35rem;
       line-height: 1.3;
     }
@@ -754,14 +750,14 @@
     .product-price {
       font-weight: 600;
       font-size: 0.95rem;
-      color: var(--accent);
+      color: var(--teal);
     }
     .product-buy {
       font-size: 0.68rem;
       font-weight: 600;
       padding: 0.35rem 0.9rem;
       border-radius: 50px;
-      background: var(--accent);
+      background: var(--teal);
       color: white;
       border: none;
       cursor: pointer;
@@ -769,7 +765,7 @@
       letter-spacing: 0.06em;
       transition: all 0.25s;
     }
-    .product-buy:hover { background: var(--accent-hover); transform: scale(1.03); }
+    .product-buy:hover { background: var(--teal-dark); transform: scale(1.03); }
 
     /* ==================== BOOKING / CONSULTATION ==================== */
     #booking {
@@ -782,11 +778,11 @@
       position: absolute;
       top: 0; right: 0;
       width: 400px; height: 400px;
-      background: radial-gradient(circle, rgba(193,127,89,0.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(10,147,150,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
-    #booking .section-tag { color: var(--terracotta); }
-    #booking .section-tag::before { background: var(--terracotta); }
+    #booking .section-tag { color: var(--teal-light); }
+    #booking .section-tag::before { background: var(--teal-light); }
     #booking .section-title { color: white; }
     #booking .section-desc { color: rgba(255,255,255,0.55); }
     .booking-grid {
@@ -807,8 +803,8 @@
       transform: translateY(-4px);
     }
     .booking-card.featured {
-      background: rgba(193, 127, 89, 0.1);
-      border-color: rgba(193, 127, 89, 0.25);
+      background: rgba(10, 147, 150, 0.08);
+      border-color: rgba(10, 147, 150, 0.2);
     }
     .booking-card.featured::before {
       content: 'Najpopularniejszy';
@@ -819,7 +815,7 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--terracotta);
+      color: var(--teal-light);
       background: var(--section-dark);
       padding: 0 0.8rem;
     }
@@ -854,7 +850,7 @@
       content: '\2713';
       position: absolute;
       left: 0;
-      color: var(--terracotta);
+      color: var(--teal-light);
       font-size: 0.8rem;
     }
     .booking-price {
@@ -885,13 +881,13 @@
       font-family: inherit;
     }
     .btn-book-primary {
-      background: var(--accent);
+      background: var(--teal);
       color: white;
     }
     .btn-book-primary:hover {
-      background: var(--accent-hover);
+      background: var(--teal-dark);
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(193, 127, 89, 0.25);
+      box-shadow: 0 8px 24px rgba(10, 147, 150, 0.25);
     }
     .btn-book-outline {
       background: transparent;
@@ -899,8 +895,8 @@
       border: 1px solid rgba(255,255,255,0.18);
     }
     .btn-book-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
+      border-color: var(--teal);
+      color: var(--teal-light);
     }
 
     /* ==================== TESTIMONIALS ==================== */
@@ -914,20 +910,20 @@
       background: white;
       border-radius: 18px;
       padding: 2.2rem;
-      border: 1px solid rgba(232, 224, 212, 0.45);
+      border: 1px solid rgba(74, 25, 66, 0.05);
       position: relative;
     }
     .testimonial-card::before {
       content: '\201C';
       font-family: 'Playfair Display', serif;
       font-size: 4rem;
-      color: rgba(193, 127, 89, 0.12);
+      color: rgba(10, 147, 150, 0.1);
       position: absolute;
       top: 0.8rem; left: 1.5rem;
       line-height: 1;
     }
     .testimonial-stars {
-      color: var(--terracotta);
+      color: var(--teal);
       font-size: 0.85rem;
       margin-bottom: 1rem;
       letter-spacing: 3px;
@@ -946,12 +942,12 @@
     }
     .testimonial-role {
       font-size: 0.74rem;
-      color: var(--clay);
+      color: var(--text-muted);
     }
 
     /* ==================== NEWSLETTER ==================== */
     #newsletter {
-      background: linear-gradient(160deg, #f2e8dd 0%, #e6ddd0 50%, #dfe5d8 100%);
+      background: linear-gradient(160deg, rgba(74,25,66,0.04) 0%, rgba(10,147,150,0.05) 50%, rgba(74,25,66,0.03) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -961,7 +957,7 @@
       top: -50%; right: -20%;
       width: 500px; height: 500px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(193,127,89,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(10,147,150,0.04) 0%, transparent 70%);
       pointer-events: none;
     }
     .newsletter-inner {
@@ -986,7 +982,7 @@
     .newsletter-form input {
       flex: 1;
       padding: 0.95rem 1.5rem;
-      border: 1.5px solid var(--clay);
+      border: 1.5px solid var(--sand);
       border-radius: 52px;
       font-size: 0.88rem;
       font-family: inherit;
@@ -995,17 +991,19 @@
       outline: none;
       transition: all 0.25s;
     }
-    .newsletter-form input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(193,127,89,0.1); }
-    .newsletter-form input::placeholder { color: var(--clay); }
+    .newsletter-form input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(10,147,150,0.08); }
+    .newsletter-form input::placeholder { color: var(--text-muted); }
     .newsletter-note {
       font-size: 0.74rem;
       color: var(--text-light);
       margin-top: 1rem;
     }
+    .newsletter-note a { color: var(--teal); text-decoration: none; }
+    .newsletter-note a:hover { text-decoration: underline; }
 
     /* ==================== FOOTER ==================== */
     footer {
-      background: var(--deep-brown);
+      background: var(--plum);
       color: rgba(255,255,255,0.5);
       padding: 4rem 2rem 3rem;
     }
@@ -1059,7 +1057,7 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .footer-nav-col a:hover { color: var(--terracotta); }
+    .footer-nav-col a:hover { color: var(--teal-light); }
     .footer-bottom {
       display: flex;
       justify-content: space-between;
@@ -1068,6 +1066,14 @@
       gap: 1rem;
     }
     .footer-copy { font-size: 0.74rem; }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a {
+      font-size: 0.74rem;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--teal-light); }
     .footer-social { display: flex; gap: 1.2rem; }
     .footer-social a {
       width: 36px; height: 36px;
@@ -1082,8 +1088,8 @@
       transition: all 0.25s;
     }
     .footer-social a:hover {
-      border-color: var(--terracotta);
-      color: var(--terracotta);
+      border-color: var(--teal);
+      color: var(--teal-light);
     }
 
     /* ==================== MOBILE MENU ==================== */
@@ -1101,13 +1107,13 @@
     .mobile-menu a {
       font-family: 'DM Serif Display', serif;
       font-size: 1.5rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       text-decoration: none;
       padding: 0.8rem 0;
       border-bottom: 1px solid var(--sand);
       transition: color 0.2s;
     }
-    .mobile-menu a:hover { color: var(--accent); }
+    .mobile-menu a:hover { color: var(--teal); }
 
     /* ==================== RESPONSIVE ==================== */
     @media (max-width: 1024px) {
@@ -1164,7 +1170,7 @@
       display: none;
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.55);
+      background: rgba(42, 24, 38, 0.6);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       z-index: 1000;
@@ -1179,25 +1185,25 @@
       max-width: 500px;
       width: 90%;
       position: relative;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.15);
+      box-shadow: 0 40px 100px rgba(74, 25, 66, 0.2);
     }
     .modal-close {
       position: absolute;
       top: 1rem; right: 1.3rem;
       background: none; border: none;
       font-size: 1.5rem;
-      color: var(--clay);
+      color: var(--text-muted);
       cursor: pointer;
       transition: color 0.2s;
       width: 36px; height: 36px;
       display: flex; align-items: center; justify-content: center;
       border-radius: 50%;
     }
-    .modal-close:hover { color: var(--text); background: var(--cream); }
+    .modal-close:hover { color: var(--text); background: var(--sand-light); }
     .modal h3 {
       font-family: 'DM Serif Display', serif;
       font-size: 1.5rem;
-      color: var(--deep-brown);
+      color: var(--plum);
       margin-bottom: 0.5rem;
     }
     .modal p {
@@ -1218,8 +1224,8 @@
       color: var(--text);
     }
     .modal-form input:focus, .modal-form select:focus, .modal-form textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(193,127,89,0.08);
+      border-color: var(--teal);
+      box-shadow: 0 0 0 3px rgba(10,147,150,0.06);
     }
     .modal-form textarea { resize: vertical; min-height: 80px; }
 
@@ -1228,7 +1234,7 @@
       bottom: 2rem;
       left: 50%;
       transform: translateX(-50%) translateY(100px);
-      background: var(--deep-brown);
+      background: var(--plum);
       color: white;
       padding: 1rem 2rem;
       border-radius: 14px;
@@ -1236,14 +1242,14 @@
       z-index: 1001;
       opacity: 0;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 40px rgba(74, 25, 66, 0.2);
     }
     .toast.show {
       transform: translateX(-50%) translateY(0);
       opacity: 1;
     }
 
-    /* Photo section between about and experience */
+    /* Photo section */
     .photo-divider {
       display: flex;
       gap: 1.5rem;
@@ -1257,7 +1263,7 @@
       flex: 1;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 40px rgba(74, 25, 66, 0.08);
       aspect-ratio: 16/9;
     }
     .photo-divider-item img {
@@ -1436,8 +1442,8 @@
       <div class="initiatives-grid">
 
         <div class="initiative-card fade-up">
-          <div class="initiative-icon m4s">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c17f59" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          <div class="initiative-icon">
+            <img src="init-m4s.png" alt="Mentors4Starters">
           </div>
           <h3>Mentors4Starters</h3>
           <div class="initiative-subtitle">Najwiekszy program mentoringowy w Polsce</div>
@@ -1455,8 +1461,8 @@
         </div>
 
         <div class="initiative-card fade-up fade-up-delay-1">
-          <div class="initiative-icon wit">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7a8a6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <div class="initiative-icon">
+            <img src="init-wit.png" alt="Women in Tech Summit">
           </div>
           <h3>Women in Tech Summit</h3>
           <div class="initiative-subtitle">Perspektywy &mdash; Najwiekszy event w CEE</div>
@@ -1478,8 +1484,8 @@
         </div>
 
         <div class="initiative-card fade-up fade-up-delay-2">
-          <div class="initiative-icon sns">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a078b4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+          <div class="initiative-icon">
+            <img src="init-shesnnovation.png" alt="Shesnnovation">
           </div>
           <h3>Shesnnovation</h3>
           <div class="initiative-subtitle">Wsparcie kobiet innowatorek</div>
@@ -1522,8 +1528,8 @@
 
         <a href="https://mentors4starters.pl/mentors/joanna-koper/" target="_blank" rel="noopener" class="media-card fade-up fade-up-delay-1">
           <div class="media-card-header">
-            <div class="media-card-icon blue">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5b7fb5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            <div class="media-card-icon plum">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4a1942" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
             </div>
             <div class="media-card-source">Mentors4Starters</div>
           </div>
@@ -1534,8 +1540,8 @@
 
         <a href="https://shesnnovation.pl/mentorzy/joanna-koper/" target="_blank" rel="noopener" class="media-card fade-up fade-up-delay-2">
           <div class="media-card-header">
-            <div class="media-card-icon purple">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9070a8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            <div class="media-card-icon magenta">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c60e8c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
             </div>
             <div class="media-card-source">Shesnnovation</div>
           </div>
@@ -1546,8 +1552,8 @@
 
         <a href="https://venturecafewarsaw.org/speakers/joanna-koper/" target="_blank" rel="noopener" class="media-card fade-up">
           <div class="media-card-header">
-            <div class="media-card-icon green">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b8a5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <div class="media-card-icon teal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             </div>
             <div class="media-card-source">Venture Cafe Warsaw</div>
           </div>
@@ -1559,7 +1565,7 @@
         <a href="https://fris.pl/trenerzy/joanna-koper" target="_blank" rel="noopener" class="media-card fade-up fade-up-delay-1">
           <div class="media-card-header">
             <div class="media-card-icon teal">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5a9e8f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a9396" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
             </div>
             <div class="media-card-source">FRIS</div>
           </div>
@@ -1606,8 +1612,8 @@
 
         <a href="https://x.com/koperjoanna" target="_blank" rel="noopener" class="media-card fade-up fade-up-delay-2">
           <div class="media-card-header">
-            <div class="media-card-icon green">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b8a5e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            <div class="media-card-icon plum">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4a1942" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
             </div>
             <div class="media-card-source">X / Twitter</div>
           </div>
@@ -1628,50 +1634,38 @@
       <p class="section-desc fade-up">Od indywidualnego doradztwa kariery po warsztaty zespolowe &mdash; dopasowuje format do Twoich potrzeb.</p>
       <div class="services-grid">
         <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c17f59" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-          </div>
+          <div class="service-icon"><img src="svc-career.png" alt="Doradztwo kariery"></div>
           <h3>Doradztwo kariery</h3>
           <p>Indywidualne sesje pomagajace Ci zdefiniowac cel zawodowy, odkryc mocne strony i stworzyc plan dzialania. Wykorzystuje autorski Zintegrowany Model Rozwoju.</p>
           <div class="service-price">od 350 PLN <span>/ sesja</span></div>
         </div>
         <div class="service-card fade-up fade-up-delay-1">
           <span class="service-badge">Popularne</span>
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c17f59" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-          </div>
+          <div class="service-icon"><img src="svc-mentoring.png" alt="Mentoring indywidualny"></div>
           <h3>Mentoring indywidualny</h3>
           <p>3-miesieczny program mentoringowy z regularnymi spotkaniami, zadaniami domowymi i wsparciem miedzy sesjami. Idealny dla osob na poczatku kariery lub zmieniajacych sciezke.</p>
           <div class="service-price">1 800 PLN <span>/ 3 miesiace</span></div>
         </div>
         <div class="service-card fade-up fade-up-delay-2">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c17f59" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
-          </div>
+          <div class="service-icon"><img src="svc-workshop.png" alt="Warsztaty grupowe"></div>
           <h3>Warsztaty grupowe</h3>
           <p>Interaktywne warsztaty Design Thinking, rozwoju kompetencji miekkich i budowania zespolu. Dla firm, organizacji i grup zorganizowanych (8&ndash;25 osob).</p>
           <div class="service-price">od 3 500 PLN <span>/ dzien</span></div>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c17f59" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-          </div>
+          <div class="service-icon"><img src="svc-fris.png" alt="Diagnostyka FRIS"></div>
           <h3>Diagnostyka FRIS</h3>
           <p>Certyfikowane badanie stylow myslenia FRIS z indywidualnym omowieniem wynikow. Odkryj jak myslisz, komunikujesz sie i podejmujesz decyzje.</p>
           <div class="service-price">450 PLN <span>/ badanie + konsultacja</span></div>
         </div>
         <div class="service-card fade-up fade-up-delay-1">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c17f59" stroke-width="1.5"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-          </div>
+          <div class="service-icon"><img src="svc-training.png" alt="Szkolenia dla organizacji"></div>
           <h3>Szkolenia dla organizacji</h3>
           <p>Cykle szkoleniowe z zakresu mentoringu, zarzadzania projektami (Scrum, Agile) i rozwoju liderow. Dopasowane do potrzeb firmy.</p>
           <div class="service-price">Wycena indywidualna</div>
         </div>
         <div class="service-card fade-up fade-up-delay-2">
-          <div class="service-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c17f59" stroke-width="1.5"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
-          </div>
+          <div class="service-icon"><img src="svc-speaking.png" alt="Prelekcje i moderacja"></div>
           <h3>Prelekcje i moderacja</h3>
           <p>Wystapienia na konferencjach, panelach i eventach dotyczacych mentoringu, rozwoju kariery, Women in Tech i nowoczesnej edukacji.</p>
           <div class="service-price">Wycena indywidualna</div>
@@ -1688,9 +1682,7 @@
       <p class="section-desc fade-up">Gotowe narzedzia do samodzielnej pracy &mdash; natychmiastowy dostep po zakupie.</p>
       <div class="store-grid fade-up">
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v1">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#a87550" stroke-width="1.2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-workbook.png" alt="Mapa kariery"></div>
           <div class="product-info">
             <h4>Mapa kariery &mdash; workbook</h4>
             <p>30-stronicowy zeszyt cwiczen do samodzielnego planowania sciezki kariery</p>
@@ -1701,9 +1693,7 @@
           </div>
         </div>
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v2">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8a7a6a" stroke-width="1.2"><path d="M3 18v-6a9 9 0 0118 0v6"/><path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-audio.png" alt="Audio-przewodnik"></div>
           <div class="product-info">
             <h4>5 cwiczen na pewnosc siebie</h4>
             <p>Audio-przewodnik z cwiczeniami do odsluchu przed waznym spotkaniem</p>
@@ -1714,9 +1704,7 @@
           </div>
         </div>
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v3">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#6a8a5a" stroke-width="1.2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-template.png" alt="Szablon rozmowy"></div>
           <div class="product-info">
             <h4>Szablon rozmowy mentoringowej</h4>
             <p>Gotowa struktura spotkania mentora z mentee plus 20 pytan startowych</p>
@@ -1727,9 +1715,7 @@
           </div>
         </div>
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v4">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#5a7a9a" stroke-width="1.2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-ebook.png" alt="E-book mentoring"></div>
           <div class="product-info">
             <h4>E-book: Mentoring od A do Z</h4>
             <p>Kompendium wiedzy o mentoringu &mdash; teoria, praktyka, narzedzia</p>
@@ -1740,9 +1726,7 @@
           </div>
         </div>
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v5">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9a7a60" stroke-width="1.2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-checklist.png" alt="Checklist"></div>
           <div class="product-info">
             <h4>Checklist: Gotowa na zmiane?</h4>
             <p>Lista kontrolna decyzji o zmianie kariery &mdash; PDF do wydrukowania</p>
@@ -1753,9 +1737,7 @@
           </div>
         </div>
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v6">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#6a8a6a" stroke-width="1.2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-cards.png" alt="Karty do facylitacji"></div>
           <div class="product-info">
             <h4>Karty do facylitacji</h4>
             <p>Zestaw 40 kart z pytaniami i technikami do prowadzenia warsztatow</p>
@@ -1766,9 +1748,7 @@
           </div>
         </div>
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v7">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#8a6a8a" stroke-width="1.2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-video.png" alt="Mini-kurs LinkedIn"></div>
           <div class="product-info">
             <h4>Mini-kurs: LinkedIn dla mentee</h4>
             <p>5 video-lekcji jak budowac profesjonalny profil i siec kontaktow</p>
@@ -1779,9 +1759,7 @@
           </div>
         </div>
         <div class="product-card" onclick="showToast('Produkt zostanie wkrotce udostepniony!')">
-          <div class="product-visual v8">
-            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#5a8a8a" stroke-width="1.2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-          </div>
+          <div class="product-visual"><img src="icon-journal.png" alt="Dziennik refleksji"></div>
           <div class="product-info">
             <h4>Dziennik refleksji mentora</h4>
             <p>90-dniowy dziennik z pytaniami prowadzacymi dla mentorow</p>
@@ -1888,7 +1866,7 @@
           <input type="email" placeholder="Twoj adres e-mail" required>
           <button type="submit" class="btn btn-primary">Zapisz sie</button>
         </form>
-        <p class="newsletter-note">Dopisujac sie do listy akceptujesz polityke prywatnosci. Mozesz zrezygnowac w kazdej chwili.</p>
+        <p class="newsletter-note">Dopisujac sie do listy akceptujesz <a href="polityka-prywatnosci.html">polityke prywatnosci</a>. Mozesz zrezygnowac w kazdej chwili.</p>
       </div>
     </div>
   </section>
@@ -1932,6 +1910,10 @@
       </div>
       <div class="footer-bottom">
         <div class="footer-copy">&copy; 2026 Joanna Koper &mdash; EduMentorka. Wszelkie prawa zastrzezone.</div>
+        <div class="footer-legal">
+          <a href="polityka-prywatnosci.html">Polityka prywatnosci</a>
+          <a href="regulamin.html">Regulamin</a>
+        </div>
         <div class="footer-social">
           <a href="https://www.linkedin.com/in/joannakoper/" target="_blank" rel="noopener" aria-label="LinkedIn">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1971,7 +1953,6 @@
   <script>
     // Nav scroll effect
     const nav = document.getElementById('nav');
-    let lastScroll = 0;
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 30);
     }, { passive: true });
@@ -1985,71 +1966,38 @@
       document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
     }
 
-    // Fade-up animations with IntersectionObserver
+    // Fade-up animations
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
-    }, {
-      threshold: 0.08,
-      rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
-    // Counter animation for impact numbers
+    // Counter animation
     function animateCounter(el) {
       const target = parseInt(el.getAttribute('data-target'));
       const suffix = el.getAttribute('data-suffix') || '';
       if (!target) return;
-
       const duration = 2000;
       const startTime = performance.now();
-      const startVal = 0;
-
-      function easeOutExpo(t) {
-        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-      }
-
+      function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
       function update(now) {
-        const elapsed = now - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeOutExpo(progress);
-        const current = Math.floor(startVal + (target - startVal) * easedProgress);
-
-        if (target >= 1000) {
-          el.textContent = current.toLocaleString('pl-PL') + suffix;
-        } else {
-          el.textContent = current + suffix;
-        }
-
-        if (progress < 1) {
-          requestAnimationFrame(update);
-        }
+        const progress = Math.min((now - startTime) / duration, 1);
+        const current = Math.floor(target * easeOutExpo(progress));
+        el.textContent = (target >= 1000 ? current.toLocaleString('pl-PL') : current) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
       }
-
       requestAnimationFrame(update);
     }
-
-    // Trigger counters when visible
     const counterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const counters = entry.target.querySelectorAll ?
-            (entry.target.matches('[data-target]') ? [entry.target] : entry.target.querySelectorAll('[data-target]')) :
-            [entry.target];
-
-          counters.forEach(counter => {
-            if (!counter.dataset.animated) {
-              counter.dataset.animated = 'true';
-              animateCounter(counter);
-            }
-          });
+          const counters = entry.target.matches('[data-target]') ? [entry.target] : entry.target.querySelectorAll('[data-target]');
+          counters.forEach(c => { if (!c.dataset.animated) { c.dataset.animated = 'true'; animateCounter(c); } });
         }
       });
     }, { threshold: 0.3 });
-
     document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
 
     // Modal
@@ -2067,12 +2015,8 @@
       document.getElementById('modalOverlay').classList.remove('open');
       document.body.style.overflow = '';
     }
-    document.getElementById('modalOverlay').addEventListener('click', e => {
-      if (e.target === e.currentTarget) closeModal();
-    });
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeModal();
-    });
+    document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
     // Toast
     function showToast(msg) {
